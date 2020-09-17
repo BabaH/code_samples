@@ -10,8 +10,9 @@
 #ifndef __UTILS_H__
 #define __UTILS_H__
 
-//#include <stdio.h>
+#include <stdbool.h>
 
 void hexdump(void *base, size_t len, const char *title);
+bool blkcmp(const void *left, size_t llen, const void *right, size_t rlen, bool fill);
 
 #endif  /* __UTILS_H__ */

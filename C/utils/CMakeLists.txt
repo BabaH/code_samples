@@ -54,9 +54,11 @@ set(CMAKE_VERBOSE_MAKEFILE "ON")
 #
 # Utility Library
 #
-add_library(utils hexdump.c)
 set(CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/..")
+
+add_library(utils hexdump.c blkcmp.c)
 set_target_properties(utils PROPERTIES PUBLIC_HEADER utils.h)
+
 include(GNUInstallDirs)
 install(TARGETS utils
         EXPORT utils-config
@@ -65,10 +67,13 @@ install(TARGETS utils
         PUBLIC_HEADER DESTINATION include)
 
 #
-# Test Application for hexdump function.
+# Test Application
 #
 add_executable(hexdump_test hexdump_main.c)
 target_link_libraries(hexdump_test utils)
+
+add_executable(blkcmp_test blkcmp_main.c)
+target_link_libraries(blkcmp_test utils)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
