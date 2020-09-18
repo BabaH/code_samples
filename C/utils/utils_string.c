@@ -1,5 +1,5 @@
 /**
- * @file blkcomp.c
+ * @file utils_string.c
  * @author Hidenori BABA (BabaH@dotpro.jp)
  *
  * @copyright Copyright (c) 2020 Hidenori BABA
@@ -12,6 +12,19 @@
 
 #include "utils.h"
 
+/**
+ * @brief 
+ * 
+ * @param left  Left side buffer.
+ * @param llen  Length of left side buffer.
+ * @param right Right side buffer.
+ * @param rlen  Length of right side buffer.
+ * @param zfill
+ * 
+ * @return Result of comparation 
+ * @retval true 
+ * @retval false 
+ */
 bool blkcmp(const void *left, size_t llen, const void *right, size_t rlen, bool zfill)
 {
     bool          ret;
