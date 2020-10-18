@@ -48,7 +48,7 @@ endif (DOXYGEN_FOUND)
 #
 # Setup Cmake Variables
 #
-set(CMAKE_VERBOSE_MAKEFILE "ON")
+#set(CMAKE_VERBOSE_MAKEFILE "ON")
 #set(BUILD_SHARED_LIBS "ON")
 
 #
