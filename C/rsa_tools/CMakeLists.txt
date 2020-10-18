@@ -10,7 +10,7 @@
 #   https://code.visualstudio.com/docs/cpp/cmake-linux
 
 cmake_minimum_required(VERSION 3.8.0)
-project(utils VERSION 0.1.0)
+project(rsa_tools VERSION 0.1.0)
 
 message("Searching Doxygen...")
 find_package(Doxygen REQUIRED dot)
@@ -71,9 +71,9 @@ include_directories(${CProjRootDIR}/include)
 #find_library(UTILS_LIB NAMES utils)
 
 #
-# RSA Encryption Primitive
+# RSA Tools
 #
-add_executable(rsa_tools rsa_main.c rsaep.c rsadp.c)
+add_executable(rsa_tools rsa_main.c pkcs1.c pkcs1_main.c)
 #target_include_directories(rsa_tools PRIVATE "${CMAKE_SOURCE_DIR}/../include")
 target_link_libraries(rsa_tools tommath utils)
 
