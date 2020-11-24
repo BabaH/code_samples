@@ -56,7 +56,7 @@ endif (DOXYGEN_FOUND)
 #
 set(CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/..")
 
-add_library(utils utils_hexdump.c utils_string.c)
+add_library(utils utils_hexdump.c utils_string.c utils_ts.c)
 set_target_properties(utils PROPERTIES PUBLIC_HEADER utils.h)
 
 include(GNUInstallDirs)
@@ -69,7 +69,7 @@ install(TARGETS utils
 #
 # Test Application
 #
-add_executable(utils_test utils_main.c hexdump_main.c blkcmp_main.c)
+add_executable(utils_test utils_main.c hexdump_main.c blkcmp_main.c ts_main.c)
 target_link_libraries(utils_test utils)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

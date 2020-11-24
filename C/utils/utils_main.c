@@ -11,11 +11,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-//#define TEST_UTILS_HEXDUMP (1)
-#define TEST_UTILS_BLKCMP (1)
+//#define TEST_UTILS_HEXDUMP  (1)
+//#define TEST_UTILS_BLKCMP   (1)
+#define TEST_UTILS_TIMESPEC (1)
 
 extern bool hexdump_test();
 extern bool blkcmp_test();
+extern bool ts_test();
 
 int main(int argc, char *argv[])
 {
@@ -28,6 +30,9 @@ int main(int argc, char *argv[])
 #ifdef TEST_UTILS_BLKCMP
     ret = blkcmp_test() ? EXIT_SUCCESS : EXIT_FAILURE;
 #endif  /* TEST_UTILS_BLKCMP */
+#ifdef TEST_UTILS_TIMESPEC
+    ret = ts_test() ? EXIT_SUCCESS : EXIT_FAILURE;
+#endif  /* TEST_UTILS_TIMESPEC */
 
     return ret;
 }
