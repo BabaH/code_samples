@@ -41,75 +41,75 @@ bool blkcmp_test()
     len2 = BUF_SIZE;
     fill_data(buf,  BUF_SIZE,  len,  0);
     fill_data(buf2, BUF_SIZE, len2, 0);
-    if (blkcmp(buf, len, buf2, len2, true)) {
+    if (utils_blkcmp(buf, len, buf2, len2, true)) {
         printf("OK.\n");
     }
     else {
         printf("NG.\n");
         ret = false;
     }
-    hexdump(buf,  len,  "left");
-    hexdump(buf2, len2, "right");
+    utils_hexdump(buf,  len,  "left");
+    utils_hexdump(buf2, len2, "right");
 
     printf("Test Case 2: ");
     len  = BUF_SIZE;
     len2 = BUF_SIZE;
     fill_data(buf,  BUF_SIZE, len,  0);
     fill_data(buf2, BUF_SIZE, len2, 3);
-    if (blkcmp(buf, len, buf2, len2, true)) {
+    if (utils_blkcmp(buf, len, buf2, len2, true)) {
         printf("NG.\n");
         ret = false;
     }
     else {
         printf("OK.\n");
     }
-    hexdump(buf,  len,  "left");
-    hexdump(buf2, len2, "right");
+    utils_hexdump(buf,  len,  "left");
+    utils_hexdump(buf2, len2, "right");
 
     printf("Test Case 3: ");
     len  = BUF_SIZE;
     len2 = BUF_SIZE - 1;
     fill_data(buf,  BUF_SIZE, len,  1);
     fill_data(buf2, BUF_SIZE, len2, 0);
-    if (blkcmp(buf, len, buf2, len2, true)) {
+    if (utils_blkcmp(buf, len, buf2, len2, true)) {
         printf("OK.\n");
     }
     else {
         printf("NG.\n");
         ret = false;
     }
-    hexdump(buf,  len,  "left");
-    hexdump(buf2, len2, "right");
+    utils_hexdump(buf,  len,  "left");
+    utils_hexdump(buf2, len2, "right");
 
     printf("Test Case 4: ");
     len  = BUF_SIZE - 1;
     len2 = BUF_SIZE;
     fill_data(buf,  BUF_SIZE, len,  0);
     fill_data(buf2, BUF_SIZE, len2, 1);
-    if (blkcmp(buf, len, buf2, len2, true)) {
+    if (utils_blkcmp(buf, len, buf2, len2, true)) {
         printf("OK.\n");
     }
     else {
         printf("NG.\n");
         ret = false;
     }
-    hexdump(buf,  len,  "left");
-    hexdump(buf2, len2, "right");
+    utils_hexdump(buf,  len,  "left");
+    utils_hexdump(buf2, len2, "right");
 
     printf("Test Case 5: ");
     len  = BUF_SIZE;
     len2 = BUF_SIZE;
     fill_data(buf,  BUF_SIZE, len,  5);
     fill_data(buf2, BUF_SIZE, len2, 5);
-    if (blkcmp(buf, len, buf2, len2, true)) {
+    if (utils_blkcmp(buf, len, buf2, len2, true)) {
         printf("OK.\n");
     }
     else {
         printf("NGp.\n");
         ret = false;
     }
-    hexdump(buf,  len,  "left");
-    hexdump(buf2, len2, "right");
+    utils_hexdump(buf,  len,  "left");
+    utils_hexdump(buf2, len2, "right");
 
     printf("Test Case 6: ");
     len  = BUF_SIZE;
@@ -117,15 +117,15 @@ bool blkcmp_test()
     fill_data(buf,  BUF_SIZE, len,  5);
     fill_data(buf2, BUF_SIZE, len2, 5);
     buf2[3] = 0x31;
-    if (blkcmp(buf, len, buf2, len2, true)) {
+    if (utils_blkcmp(buf, len, buf2, len2, true)) {
         printf("NG.\n");
         ret = false;
     }
     else {
         printf("OK.\n");
     }
-    hexdump(buf,  len,  "left");
-    hexdump(buf2, len2, "right");
+    utils_hexdump(buf,  len,  "left");
+    utils_hexdump(buf2, len2, "right");
 
     return ret;
 }

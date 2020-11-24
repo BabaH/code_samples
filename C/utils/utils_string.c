@@ -25,7 +25,7 @@
  * @retval true 
  * @retval false 
  */
-bool blkcmp(const void *left, size_t llen, const void *right, size_t rlen, bool zfill)
+bool utils_blkcmp(const void *left, size_t llen, const void *right, size_t rlen, bool zfill)
 {
     bool          ret;
     bool          flag;

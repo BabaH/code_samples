@@ -21,11 +21,11 @@ bool hexdump_test()
         buf[i] = 'A' + (i % 26);
     }
 
-    hexdump(buf, sizeof(buf),        "Test Case 1");
-    hexdump(buf, (sizeof(buf) - 1),  "Test Case 2");
-    hexdump(buf, (sizeof(buf) - 15), "Test Case 3");
-    hexdump(buf, 1,                  "Test Case 4");
-    hexdump(buf, 0,                  "Test Case 5");
+    utils_hexdump(buf, sizeof(buf),        "Test Case 1");
+    utils_hexdump(buf, (sizeof(buf) - 1),  "Test Case 2");
+    utils_hexdump(buf, (sizeof(buf) - 15), "Test Case 3");
+    utils_hexdump(buf, 1,                  "Test Case 4");
+    utils_hexdump(buf, 0,                  "Test Case 5");
 
     return true;
 }

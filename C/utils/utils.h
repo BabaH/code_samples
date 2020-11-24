@@ -26,7 +26,7 @@ uint32_t utils_ts_gettime(void *ctx);
 uint32_t utils_ts_diff(void *ctx1, void *ctx2, void *ctx3);
 uint64_t utils_ts_sec(void *ctx);
 uint64_t utils_ts_nsec(void *ctx);
-void hexdump(void *base, size_t len, const char *title);
-bool blkcmp(const void *left, size_t llen, const void *right, size_t rlen, bool fill);
+void utils_hexdump(void *base, size_t len, const char *title);
+bool utils_blkcmp(const void *left, size_t llen, const void *right, size_t rlen, bool fill);
 
 #endif  /* __UTILS_H__ */

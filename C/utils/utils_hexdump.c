@@ -41,7 +41,7 @@ static void separator(bool header)
  * @param len   Length of buffer.
  * @param title Title.
  */
-void hexdump(void *base, size_t len, const char *title)
+void utils_hexdump(void *base, size_t len, const char *title)
 {
     int i;
     unsigned char *pos;

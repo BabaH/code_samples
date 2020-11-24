@@ -12,8 +12,8 @@
 #include <stdbool.h>
 
 //#define TEST_UTILS_HEXDUMP  (1)
-//#define TEST_UTILS_BLKCMP   (1)
-#define TEST_UTILS_TIMESPEC (1)
+#define TEST_UTILS_BLKCMP   (1)
+//#define TEST_UTILS_TIMESPEC (1)
 
 extern bool hexdump_test();
 extern bool blkcmp_test();
